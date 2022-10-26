@@ -13,12 +13,14 @@ export default function Counter(props) {
 
         <View style={styles.container}>
             <Button 
+            color= 'green'
             touchSoundDisabled = {false}
             title="Up"
             onPress={() => {dispatch(increaseCount()); console.log("COUNT INCREASE")}}
             />
             <Text style={{margin: 10, alignSelf: 'center'}}> {counter} </Text>
             <Button 
+            color= 'orange'
             title="Down"
             onPress={() => {dispatch(decreaseCount()); console.log("COUNT DECREASE")}}
             />
@@ -26,8 +28,9 @@ export default function Counter(props) {
         </View>
         <View>
             <Button
+            color='red'
             title="RESET"
-            onPress={() => dispatch(resetCount())}
+            onPress={() => {dispatch(resetCount()); console.log("COUNT RESET")}}
             />
         </View>
     </View>
@@ -39,7 +42,6 @@ export default function Counter(props) {
     container: {
       flex: 1,
       backgroundColor: '#fff',
-    //   alignItems: 'center',
       justifyContent: 'center',
     },
   });

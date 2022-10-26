@@ -1,4 +1,4 @@
-import {INCREASE_COUNT, DECREASE_COUNT, RESET_COUNT} from "./actionList"
+import {INCREASE_COUNT, DECREASE_COUNT, RESET_COUNT, ADD_TODO, REMOVE_TODO} from "./actionList"
 
 
 export const increaseCount = () => {
@@ -17,4 +17,19 @@ export const resetCount = () => {
     return {
         type: RESET_COUNT
         }
+}
+
+export const addTodo = (todo) => {
+    return {
+        type: ADD_TODO,
+        payload: todo
+    }
+
+}
+
+export const removeTodo = (todo) => {
+    return {
+        type: REMOVE_TODO,
+        payload: todo
+    }
 }

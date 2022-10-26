@@ -14,11 +14,18 @@ function Home(){
   const navigation = useNavigation()
 
   return(
-  <View style={styles.container}>
-    <Button onPress={() => navigation.navigate('Counter')} title="Go to Counter"/>
-    <Button onPress={() => navigation.navigate('TodoList')} title="Go to Todolist"/>
+    <View style={styles.container}>
+      <Text style={styles.title}>My Demo Redux App</Text>
+      <View style={styles.container}>
+        <View style={{margin: 10}}>
+          <Button onPress={() => navigation.navigate('Counter')} title="Go to Counter"/>
+        </View>
+        <View style={{margin: 10}}>
+          <Button onPress={() => navigation.navigate('TodoList')} title="Go to Todolist"/>
+        </View>
+      </View>
+    </View>
 
-</View>
   )
 
 }
@@ -29,7 +36,7 @@ function CounterScreen()
   const navigation = useNavigation()
 
   return(
-  <View style={styles.container}>
+  <View style={{flex:1}}>
   <Provider store={store}>
     <Counter/>
     <Button onPress={() => navigation.goBack()} title="Back"/>
@@ -45,7 +52,7 @@ function TodoList(){
   const navigation = useNavigation()
 
   return(
-  <View style={styles.container}>
+  <View style={{flex:1}}>
   <Provider store={store}>
     <Todolist/>
     <Button onPress={() => navigation.goBack()} title="Back"/>
@@ -75,8 +82,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     // alignItems: 'center',
     justifyContent: 'center',
+    marginVertical: 50, marginHorizontal:20
   },
+  title: {alignSelf: 'center', fontSize:30}
 });
